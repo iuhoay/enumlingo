@@ -1,8 +1,82 @@
 # Enumlingo
-Short description and motivation.
+
+Enumlingo is a simple gem that helps you translate enum values in your Rails app.
 
 ## Usage
-How to use my plugin.
+
+`extend Enumlingo` in your model and call enumlingo with the enums you want to translate.
+
+```ruby
+class Product < ApplicationRecord
+  extend Enumlingo
+
+  enum status: %i[active inactive]
+  enum kind: %i[book food medical other]
+
+
+  enumlingo :status, :kind
+end
+```
+
+define the translations in your locale file
+
+```yaml
+en:
+  activerecord:
+    attributes:
+      product:
+      status:
+        active: "Active"
+        inactive: "Inactive"
+      kind:
+        book: "Book"
+        food: "Food"
+        medical: "Medical"
+        other: "Other"
+
+"zh-CN":
+  activerecord:
+    attributes:
+      product:
+      status:
+        active: "激活"
+        inactive: "未激活"
+      kind:
+        book: "书籍"
+        food: "食品"
+        medical: "医疗"
+        other: "其他"
+```
+
+### Value translation
+
+```ruby
+product = Product.new(status: :active, kind: :book)
+product.status_lingo # => "Active"
+product.kind_lingo # => "Book"
+
+I18n.locale = "zh-CN"
+product.status_lingo # => "激活"
+product.kind_lingo # => "书籍"
+```
+
+### Options translation
+
+```ruby
+Product.statuses_lingo # => [["Active", "active"], ["Inactive", "inactive"]]
+Product.kinds_lingo # => [["Book", "book"], ["Food", "food"], ["Medical", "medical"], ["Other", "other"]]
+```
+
+### Form translation
+
+```ruby
+<%= form_for @product do |f| %>
+  <%= f.select :status, Product.statuses_lingo %>
+  <%= f.select :kind, Product.kinds_lingo %>
+
+  ...
+<% end %>
+```
 
 ## Installation
 Add this line to your application's Gemfile:
