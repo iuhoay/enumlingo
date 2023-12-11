@@ -24,4 +24,14 @@ class EnumlingoTest < ActiveSupport::TestCase
     book = products(:other)
     assert_equal "Translation missing: zh-CN.activerecord.attributes.product.kinds.other", book.kind_lingo
   end
+
+  test "it return options of product kind" do
+    I18n.locale = "en"
+    assert_equal [["Book", "book"], ["Food", "food"], ["Medical", "medical"], ["Other", "other"]], Product.kinds_lingo
+  end
+
+  test "it return options of product kind in Chinese" do
+    I18n.locale = "zh-CN"
+    assert_equal [["书籍", "book"], ["食品", "food"], ["药品", "medical"], ["Translation missing: zh-CN.activerecord.attributes.product.kinds.other", "other"]], Product.kinds_lingo
+  end
 end
