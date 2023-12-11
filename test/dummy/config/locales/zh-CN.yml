@@ -1,0 +1,8 @@
+"zh-CN":
+  activerecord:
+    attributes:
+      product:
+        kinds:
+          book: 书籍
+          food: 食品
+          medicine: 药品
