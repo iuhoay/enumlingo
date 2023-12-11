@@ -1,0 +1,6 @@
+<%# locals: (product:) %>
+
+<%= form_with model: product do |f| %>
+  <%= f.select :kind, Product.kinds_lingo %>
+  <%= f.submit %>
+<% end %>

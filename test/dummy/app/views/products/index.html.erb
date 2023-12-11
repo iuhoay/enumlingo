@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Kind</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= link_to "Add New Product", new_product_path %>
+
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.kind_lingo %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      </tr>
+    <% end %>
+</table>

@@ -1,0 +1,15 @@
+<dl>
+  <dt>Id</dt>
+  <dd><%= @product.id %></dd>
+  <dt>Kind</dt>
+  <dd><%= @product.kind_lingo %></dd>
+</dl>
+
+<ul>
+  <li>
+    <%= link_to "Edit", edit_product_path(@product) %>
+  </li>
+  <li>
+    <%= link_to "Back", products_path %>
+  </li>
+</ul>

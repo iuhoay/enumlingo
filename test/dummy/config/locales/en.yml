@@ -5,5 +5,5 @@ en:
         kinds:
           book: Book
           food: Food
-          medicine: Medicine
+          medical: Medical
           other: Other
