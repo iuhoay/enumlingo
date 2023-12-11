@@ -1,5 +1,7 @@
 # Enumlingo
 
+[![Gem Version](https://badge.fury.io/rb/enumlingo.svg)](https://badge.fury.io/rb/enumlingo)
+
 Enumlingo is a simple gem that helps you translate enum values in your Rails app.
 
 ## Usage
