@@ -27,23 +27,23 @@ en:
   activerecord:
     attributes:
       product:
-      status:
-        active: "Active"
-        inactive: "Inactive"
-      kind:
-        book: "Book"
-        food: "Food"
-        medical: "Medical"
-        other: "Other"
+        statuses:
+          active: "Active"
+          inactive: "Inactive"
+        kinds:
+          book: "Book"
+          food: "Food"
+          medical: "Medical"
+          other: "Other"
 
 "zh-CN":
   activerecord:
     attributes:
       product:
-      status:
+      statuses:
         active: "激活"
         inactive: "未激活"
-      kind:
+      kinds:
         book: "书籍"
         food: "食品"
         medical: "医疗"
