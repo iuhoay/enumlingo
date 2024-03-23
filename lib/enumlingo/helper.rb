@@ -14,6 +14,10 @@ module Enumlingo
           [I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{key}"), key]
         end
       end
+
+      define_singleton_method "#{attribute}_lingo" do |key|
+        I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{key}")
+      end
     end
   end
 end
