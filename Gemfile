@@ -4,8 +4,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Specify your gem's dependencies in enumlingo.gemspec.
 gemspec
 
-gem "puma"
-
 gem "sqlite3"
 
 # Start debugger with binding.b [https://github.com/ruby/debug]
