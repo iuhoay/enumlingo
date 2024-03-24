@@ -36,6 +36,7 @@ class EnumlingoTest < ActiveSupport::TestCase
   end
 
   test "it return text of product kind" do
+    I18n.locale = "en"
     assert_equal "Book", Product.kind_lingo(:book)
   end
 

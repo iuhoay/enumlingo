@@ -69,6 +69,10 @@ Product.statuses_lingo # => [["Active", "active"], ["Inactive", "inactive"]]
 Product.kinds_lingo # => [["Book", "book"], ["Food", "food"], ["Medical", "medical"], ["Other", "other"]]
 ```
 
+```ruby
+Product.status_lingo(:active) # => "Active"
+```
+
 ### Form translation
 
 ```ruby
