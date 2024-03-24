@@ -44,4 +44,8 @@ class EnumlingoTest < ActiveSupport::TestCase
     I18n.locale = "zh-CN"
     assert_equal "书籍", Product.kind_lingo(:book)
   end
+
+  test "return options of product kind value with custom translation" do
+    assert_equal [["Book", 0], ["Food", 1], ["Medical", 2], ["Other", 3]], Product.kinds_lingo_values(:en)
+  end
 end

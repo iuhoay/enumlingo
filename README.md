@@ -65,8 +65,13 @@ product.kind_lingo # => "书籍"
 ### Options translation
 
 ```ruby
+# Translate options with key
 Product.statuses_lingo # => [["Active", "active"], ["Inactive", "inactive"]]
 Product.kinds_lingo # => [["Book", "book"], ["Food", "food"], ["Medical", "medical"], ["Other", "other"]]
+
+# Translate options with value
+Product.statuses_lingo_values # => [["Active", 0], ["Inactive", 1]]
+Product.kinds_lingo_values # => [["Book", 0], ["Food", 1], ["Medical", 2], ["Other", 3]]
 ```
 
 ```ruby

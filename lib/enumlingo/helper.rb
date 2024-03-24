@@ -9,7 +9,7 @@ module Enumlingo
         I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{value}")
       end
 
-      define_singleton_method "#{attribute.to_s.pluralize}_lingo" do
+      define_singleton_method "#{pluralized_attribute}_lingo" do
         send(attribute.to_s.pluralize).map do |key, value|
           [I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{key}"), key]
         end
@@ -17,6 +17,12 @@ module Enumlingo
 
       define_singleton_method "#{attribute}_lingo" do |key|
         I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{key}")
+      end
+
+      define_singleton_method "#{pluralized_attribute}_lingo_values" do |locale = I18n.locale|
+        send(attribute.to_s.pluralize).map do |key, value|
+          [I18n.t("activerecord.attributes.#{model_name.i18n_key}.#{pluralized_attribute}.#{key}", locale: locale), value]
+        end
       end
     end
   end
